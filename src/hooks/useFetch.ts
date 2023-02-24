@@ -15,7 +15,7 @@ export const useFetch = (
       setResponse(data);
       setLoading(false);
     } catch (error) {
-      setError(false);
+      setError(true);
       setLoading(false);
     }
   }

@@ -5,7 +5,6 @@ import Searchbar from './components/Searchbar'
 
 function App() {
   const { loading, error, response } = useFetch('character');
-  console.log("response: ", response)
   const [searchValue, setSearchValue] = React.useState<string>("");
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
