@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CharacterModel } from '../../types/Characters';
 interface Props {
     character: CharacterModel;
-    // onSelectCharacter : (id:number) => void
+    onSelectCharacter: (character: CharacterModel) => void
 }
 
 const CardName = styled(Card.Title)`
@@ -14,7 +14,7 @@ const CardName = styled(Card.Title)`
     font-size:14px;
 `
 
-export const Character = ({ character }: Props): JSX.Element => {
+export const Character = ({ character, onSelectCharacter }: Props): JSX.Element => {
     console.log("character: ", character);
 
     return (
@@ -25,7 +25,7 @@ export const Character = ({ character }: Props): JSX.Element => {
                 <Card.Body>
                     <CardName>{character.name}</CardName>
                     <p>Especie: {character.species}</p>
-                    <Button>Más información</Button>
+                    <Button onClick={() => onSelectCharacter(character)}>Más información</Button>
                 </Card.Body>
             </Card>
 
